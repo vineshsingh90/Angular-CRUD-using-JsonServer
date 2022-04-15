@@ -1,0 +1,41 @@
+<p-toast></p-toast>
+<p-confirmDialog header="Confirmation" rejectButtonStyleClass="p-button-text" icon="pi pi-exclamation-triangle">
+</p-confirmDialog>
+
+
+<p-panel header="All Products">
+  <ng-template pTemplate="icons">
+    <p-button routerLink="new" label="Add new" type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+  </ng-template>
+
+  <p-message *ngIf="!products.length" class="w-100" severity="error" text="No data found."></p-message>
+
+  <p-table *ngIf="products.length" [value]="products" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+    responsiveLayout="scroll" currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+    [rowsPerPageOptions]="[10,25,50]">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th class="text-center">Action</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+      <tr>
+        <td>{{product.name}}</td>
+        <td>{{product.price | currency: 'INR'}}</td>
+        <td>{{getProdName(product.categoryId)}}</td>
+        <td class="text-center">
+
+          <p-button routerLink="edit/{{product.id}}" type="button" icon="pi pi-pencil" styleClass="p-button-text">
+          </p-button>
+          <p-button (click)="confirmDelete(product)" type="button" icon="pi pi-trash" styleClass="p-button-text">
+          </p-button>
+        </td>
+      </tr>
+    </ng-template>
+
+  </p-table>
+
+</p-panel>
