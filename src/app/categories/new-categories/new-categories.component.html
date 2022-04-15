@@ -1,0 +1,40 @@
+<p-toast></p-toast>
+<p-card *ngIf="!((id && this.categoryForm.value.id) || !id)">
+  <p-message class="w-100" severity="error" text="Failed to get category data."></p-message>
+  <div class="text-center">
+    <br>
+    <p-button routerLink="../../" label="Cancel" type="button" styleClass="p-button-text p-button-danger">
+    </p-button>
+    <p-button (click)="getCategoryById()" label="Retry" type="button" styleClass="p-button-text p-button-info">
+    </p-button>
+    <p-button routerLink="../../new" label="Add new" type="button" styleClass="p-button-text p-button-success">
+    </p-button>
+
+  </div>
+</p-card>
+
+<form [formGroup]="categoryForm">
+  <p-card *ngIf="(id && this.categoryForm.value.id) || !id" header="{{id ? 'Update' : 'Add new'}} Category"
+    styleClass="p-card-shadow">
+    <div class="grid p-fluid">
+      <div class="col-12 md:col-8">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-tag"></i></span>
+          <input type="text" formControlName="name" pInputText placeholder="Category Name">
+          <small *ngIf="categoryForm.controls['name'].dirty && categoryForm.controls['name'].invalid"
+            class="p-error block">Category name is required.</small>
+        </div>
+      </div>
+      <div class="col-12"></div>
+    </div>
+
+    <ng-template pTemplate="footer">
+      <div class="text-right">
+        <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" routerLink="/categories">
+        </p-button>
+        <p-button [disabled]="categoryForm.invalid" type="submit" (click)="addCategory()"
+          label="{{id ? 'Update' : 'Save'}}" icon="pi pi-check" [style]="{'margin-left': '.5em'}"></p-button>
+      </div>
+    </ng-template>
+  </p-card>
+</form>

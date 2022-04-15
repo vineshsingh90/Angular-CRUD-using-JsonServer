@@ -1,0 +1,63 @@
+<p-toast></p-toast>
+<p-card *ngIf="!((id && this.productForm.value.id) || !id)">
+  <p-message class="w-100" severity="error" text="Failed to get product data."></p-message>
+  <div class="text-center">
+    <br>
+    <p-button routerLink="../../" label="Cancel" type="button" styleClass="p-button-text p-button-danger">
+    </p-button>
+    <p-button (click)="getProductById()" label="Retry" type="button" styleClass="p-button-text p-button-info">
+    </p-button>
+    <p-button routerLink="../../new" label="Add new" type="button" styleClass="p-button-text p-button-success">
+    </p-button>
+
+  </div>
+</p-card>
+
+<p-card *ngIf="(id && this.productForm.value.id) || !id" header="{{id ? 'Update' : 'Add new'}} Product"
+  styleClass="p-card-shadow">
+
+  <form [formGroup]="productForm">
+    <div class="grid p-fluid">
+      <div class="col-12 md:col-8">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-tag"></i></span>
+          <input type="text" formControlName="name" pInputText placeholder="Product Name *">
+          <small *ngIf="productForm.controls['name'].dirty && productForm.controls['name'].invalid"
+            class="p-error block">Product name is required.</small>
+        </div>
+      </div>
+      <div class="col-12"></div>
+
+      <div class="col-12 md:col-4">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon"><i class="pi pi-hashtag"></i></span>
+          <p-dropdown class="w-100" [options]="categories" [showClear]="true" placeholder="Select Product Category"
+            formControlName="categoryId" optionLabel="name" optionValue="id">
+          </p-dropdown>
+          <small class="p-error block"
+            *ngIf="productForm.controls['categoryId'].dirty && productForm.controls['categoryId'].invalid">Product name
+            is
+            required.</small>
+
+        </div>
+      </div>
+      <div class="col-12"></div>
+      <div class="col-12 md:col-4">
+        <div class="p-inputgroup">
+          <span class="p-inputgroup-addon">₹</span>
+          <input min="0" type="number" formControlName="price" pInputText placeholder="Price">
+          <small *ngIf="productForm.controls['price'].dirty && productForm.controls['price'].invalid"
+            class="p-error block">Product name is required.</small>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="text-right">
+      <p-button label="Cancel" icon="pi pi-times" styleClass="p-button-secondary" routerLink="/products">
+      </p-button>
+      <p-button [disabled]="productForm.invalid" type="submit" (click)="addProduct()" label="{{id ? 'Update' : 'Save'}}"
+        icon="pi pi-check" [style]="{'margin-left': '.5em'}"></p-button>
+    </div>
+  </form>
+
+</p-card>

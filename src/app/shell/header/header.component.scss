@@ -1,0 +1,21 @@
+.logo {
+  cursor: pointer;
+  height: 50px;
+}
+
+/* Some more styles to beutify this example */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 7px 25px;
+  display: inline-block;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  background: #759978;
+  color: #fff;
+  top: 0;
+  z-index: 1;
+}

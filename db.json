@@ -1,0 +1,124 @@
+{
+  "products": [
+    {
+      "id": 3,
+      "name": "Potato",
+      "categoryId": 2,
+      "price": 20
+    },
+    {
+      "name": "Tomato",
+      "categoryId": 2,
+      "price": 15,
+      "id": 4
+    },
+    {
+      "name": "Grapes",
+      "categoryId": 1,
+      "price": 120,
+      "id": 5
+    },
+    {
+      "name": "Watermelon",
+      "categoryId": 1,
+      "price": 80,
+      "id": 6
+    },
+    {
+      "name": "Papaya",
+      "categoryId": 1,
+      "price": 50,
+      "id": 7
+    },
+    {
+      "name": "Guava",
+      "categoryId": 1,
+      "price": 70,
+      "id": 8
+    },
+    {
+      "name": "Chilli",
+      "categoryId": 2,
+      "price": 20,
+      "id": 9
+    },
+    {
+      "name": "Pumpkin",
+      "categoryId": 2,
+      "price": 25,
+      "id": 10
+    },
+    {
+      "name": "Lemon",
+      "categoryId": 2,
+      "price": 100,
+      "id": 11
+    },
+    {
+      "name": "no pro",
+      "categoryId": 1,
+      "price": 12,
+      "id": 12
+    },
+    {
+      "name": "Milk 500ml",
+      "categoryId": 3,
+      "price": 30,
+      "id": 13
+    },
+    {
+      "name": "Cashew 100g",
+      "categoryId": 4,
+      "price": 200,
+      "id": 14
+    },
+    {
+      "name": "Raisins 100g",
+      "categoryId": 4,
+      "price": 50,
+      "id": 15
+    },
+    {
+      "name": "Almonds 100g",
+      "categoryId": 4,
+      "price": 300,
+      "id": 16
+    },
+    {
+      "name": "abcd",
+      "categoryId": 2,
+      "price": 111,
+      "id": 17
+    },
+    {
+      "id": 18,
+      "name": "abcdax",
+      "categoryId": 1,
+      "price": 123
+    },
+    {
+      "id": 19,
+      "name": "aaaa",
+      "categoryId": 2,
+      "price": 71
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Fruit"
+    },
+    {
+      "id": 2,
+      "name": "Vegetables"
+    },
+    {
+      "name": "Dairy",
+      "id": 3
+    },
+    {
+      "name": "Dry Fruits",
+      "id": 4
+    }
+  ]
+}
