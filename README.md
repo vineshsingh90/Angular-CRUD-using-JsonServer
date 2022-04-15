@@ -2,9 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.2.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Steps to download and run the application 
+###### download and insatll nodejs application from https://nodejs.org/en/ (Ignore if already installed)
+###### insatll angular cli by running `npm i -g @angular/cli` in terminal (Ignore if already installed)
+###### install json-server by running `npm i -g json-server` in terminal (for mock-json-data server)
+###### download or clone sorce code
+###### open a terminal inside source code folder and run `npm install` to install all required node packages
+###### once node packages installed run `ng serve` in same terminal
+###### open another terminal inside source code folder and run `json-server db.json`
+###### open browser and Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -13,15 +20,3 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
